@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: rg64nluza-java-quarkus-gitops
+  description: This is GitOps manifest for rg64nluza-java-quarkus   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: rg64nluza-java-quarkus
+    janus-idp.io/tekton: rg64nluza-java-quarkus
+    backstage.io/kubernetes-id: rg64nluza-java-quarkus 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:rg64nluza-java-quarkus
